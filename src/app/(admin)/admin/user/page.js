@@ -34,33 +34,36 @@ const invoices = [
 
 export default function Users() {
     return (
-      <div className='p-4'>
+        <div className='p-4'>
+            <div className="flex justify-between items-center my-4">
+                <h1 className="font-bold text-xl">Users</h1>
 
-      
-        <Table >
-            <TableCaption>A list of your recent users.</TableCaption>
-            <TableHeader>
-                <TableRow>
-                    <TableHead >ProfileImage</TableHead>
-                    <TableHead>FullName</TableHead>
-                    <TableHead>Email</TableHead>
-                    <TableHead>Location</TableHead>
-                    <TableHead >Events</TableHead>
-                </TableRow>
-            </TableHeader>
-            <TableBody>
-                {invoices.map((invoice) => (
-                    <TableRow key={invoice.FullName}>
-                        <TableCell><img className="w-16 rounded-sm  h-24" src={invoice.ProfileImage} /></TableCell>
-                        <TableCell >{invoice.FullName}</TableCell>
-                        <TableCell>{invoice.Email}</TableCell>
-                        <TableCell >{invoice.Location}</TableCell>
-                        <TableCell >{invoice.Event}</TableCell>
+            </div>
+
+            <Table >
+                <TableCaption>A list of your recent users.</TableCaption>
+                <TableHeader>
+                    <TableRow>
+                        <TableHead >ProfileImage</TableHead>
+                        <TableHead>FullName</TableHead>
+                        <TableHead>Email</TableHead>
+                        <TableHead>Location</TableHead>
+                        <TableHead >Events</TableHead>
                     </TableRow>
-                ))}
-            </TableBody>
+                </TableHeader>
+                <TableBody>
+                    {invoices.map((invoice) => (
+                        <TableRow key={invoice.FullName}>
+                            <TableCell><img className="w-16 rounded-sm  h-24" src={invoice.ProfileImage} /></TableCell>
+                            <TableCell >{invoice.FullName}</TableCell>
+                            <TableCell>{invoice.Email}</TableCell>
+                            <TableCell >{invoice.Location}</TableCell>
+                            <TableCell >{invoice.Event}</TableCell>
+                        </TableRow>
+                    ))}
+                </TableBody>
 
-        </Table>
+            </Table>
         </div>
     )
 }
